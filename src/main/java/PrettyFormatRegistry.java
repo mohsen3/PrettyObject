@@ -31,8 +31,7 @@ public class PrettyFormatRegistry {
                     Boolean.TYPE,
                     Boolean.class,
                     Character.TYPE,
-                    Character.class,
-                    String.class
+                    Character.class
             };
 
             for (Class primitiveClass:primitiveClasses) {
