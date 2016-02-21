@@ -3,11 +3,10 @@ package prettyformater;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
 
 public class GenericObjectPrettyFormatter implements PrettyFormatter {
     private final Object obj;
+    private ArrayList<Object> fieldList;
 
     public GenericObjectPrettyFormatter(Object obj) {
         this.obj = obj;
@@ -19,7 +18,7 @@ public class GenericObjectPrettyFormatter implements PrettyFormatter {
 
     @Override
     public boolean isMultiline() {
-        return !isNull();
+        return !isNull() && !getFieldList().isEmpty();
     }
 
     @Override
@@ -29,22 +28,22 @@ public class GenericObjectPrettyFormatter implements PrettyFormatter {
 
     @Override
     public String format() {
-        return isNull() ? "null" : null;
+        return isNull() ? "null" : "";
     }
 
     @Override
-    public String getPreamble() {
-        return isNull() ? null : (obj.getClass().getName() + " {");
+    public Symbol getPreamble() {
+        return isNull() ? null : new Symbol(obj.getClass().getName() + " {");
     }
 
     @Override
-    public String getPostamble() {
-        return isNull() ? null : "}";
+    public Symbol getPostamble() {
+        return isNull() ? null : new Symbol("}");
     }
 
     @Override
     public Iterable<Object> getChildren() {
-        return isNull() ? null : getFieldsMap();
+        return isNull() ? null : getFieldList();
     }
 
     @Override
@@ -52,7 +51,10 @@ public class GenericObjectPrettyFormatter implements PrettyFormatter {
         return isNull() ? 0 : obj.getClass().getFields().length;
     }
 
-    public Iterable<Object> getFieldsMap() {
+    private ArrayList<Object> getFieldList() {
+        if (fieldList != null)
+            return fieldList;
+
         ArrayList<Field> allFields = new ArrayList<Field>();
         getAllFields(allFields, obj.getClass());
 
@@ -61,7 +63,7 @@ public class GenericObjectPrettyFormatter implements PrettyFormatter {
             maxKeyLength = Math.max(maxKeyLength, field.getName().length());
         }
 
-        ArrayList<Object> fieldList = new ArrayList<Object>();
+        fieldList = new ArrayList<Object>();
 
         for (Field field:allFields) {
             try {

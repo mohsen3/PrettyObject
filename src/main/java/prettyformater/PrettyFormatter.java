@@ -4,8 +4,8 @@ public interface PrettyFormatter {
     boolean isMultiline();
     boolean isIndexed();
     String format();
-    String getPreamble();
-    String getPostamble();
+    Object getPreamble();
+    Object getPostamble();
     Iterable<Object> getChildren();
     int maxChildrenCount();
 }

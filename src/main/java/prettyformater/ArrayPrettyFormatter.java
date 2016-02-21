@@ -30,29 +30,37 @@ public class ArrayPrettyFormatter implements PrettyFormatter {
     }
 
     @Override
-    public String getPreamble() {
-        return "[";
+    public Symbol getPreamble() {
+        return new Symbol("[");
     }
 
     @Override
-    public String getPostamble() {
-        return "]";
+    public Symbol getPostamble() {
+        return new Symbol("]");
     }
 
     @Override
     public Iterable<Object> getChildren() {
-        int length = Array.getLength(arr);
+        int length = length();
         ArrayList<Object> items = new ArrayList<Object>(length);
 
         for (int i = 0; i < length; i++) {
-            items.add(Array.get(arr, i));
+            items.add(get(i));
         }
 
         return items;
     }
 
+    private Object get(int i) {
+        return Array.get(arr, i);
+    }
+
     @Override
     public int maxChildrenCount() {
+        return length();
+    }
+
+    private int length() {
         return Array.getLength(arr);
     }
 }

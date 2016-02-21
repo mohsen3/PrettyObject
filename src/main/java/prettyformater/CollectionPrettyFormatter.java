@@ -26,13 +26,13 @@ public class CollectionPrettyFormatter implements PrettyFormatter {
     }
 
     @Override
-    public String getPreamble() {
-        return "{";
+    public Symbol getPreamble() {
+        return new Symbol(obj.getClass().getSimpleName() + " {");
     }
 
     @Override
-    public String getPostamble() {
-        return "}";
+    public Symbol getPostamble() {
+        return new Symbol("}");
     }
 
     @Override

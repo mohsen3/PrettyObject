@@ -43,6 +43,7 @@ public class PrettyFormatRegistry {
             def.register(KeyValue.class, new ReflectionPrettyFormatFactory(KeyValuePrettyFormatter.class));
             def.register(Enum.class, new ReflectionPrettyFormatFactory(EnumPrettyformatter.class));
             def.register(CharSequence.class, new ReflectionPrettyFormatFactory(CharSequencePrettyFormatter.class));
+            def.register(Symbol.class, new ReflectionPrettyFormatFactory(SymbolPrettyFormatter.class));
         } catch (NoSuchMethodException e) {
             // This should never happen
             e.printStackTrace();

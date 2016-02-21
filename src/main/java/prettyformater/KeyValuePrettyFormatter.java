@@ -20,17 +20,18 @@ public class KeyValuePrettyFormatter implements PrettyFormatter {
 
     @Override
     public String format() {
-        return keyValue.toString();
+        return " => ";
     }
 
     @Override
-    public String getPreamble() {
-        return null;
+    public Object getPreamble() {
+        return keyValue.getKey();
     }
 
     @Override
-    public String getPostamble() {
-        return null;
+    public Object getPostamble() {
+        Object value = keyValue.getValue();
+        return value == null ? new Symbol(null) : value;
     }
 
     @Override
