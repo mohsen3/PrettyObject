@@ -1,6 +1,6 @@
-package m3.prettyobject.formater;
+package m3.prettyobject.formatter;
 
-import m3.prettyobject.formater.wrappers.KeyValue;
+import m3.prettyobject.formatter.wrappers.KeyValue;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package m3.prettyobject.formater.wrappers;
+package m3.prettyobject.formatter.wrappers;
 
 public class KeyValue {
     final Object key;

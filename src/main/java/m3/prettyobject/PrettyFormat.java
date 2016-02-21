@@ -37,7 +37,7 @@ public class PrettyFormat {
         }
 
         PrettyFormatFactory factory = registry.find(obj);
-        m3.prettyobject.formater.Formatter formatter = factory.mkPrettyFormatter(obj);
+        m3.prettyobject.formatter.Formatter formatter = factory.mkPrettyFormatter(obj);
 
         objectPath.add(obj);
         Object preamble = formatter.getPreamble();

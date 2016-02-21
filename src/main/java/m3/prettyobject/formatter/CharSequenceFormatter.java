@@ -1,4 +1,4 @@
-package m3.prettyobject.formater;
+package m3.prettyobject.formatter;
 
 public class CharSequenceFormatter extends SimpleToStringFormatter {
     public CharSequenceFormatter(Object obj) {

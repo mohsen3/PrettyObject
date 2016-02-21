@@ -1,6 +1,6 @@
 package m3.prettyobject;
 
-import m3.prettyobject.formater.Formatter;
+import m3.prettyobject.formatter.Formatter;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

@@ -1,7 +1,7 @@
-package m3.prettyobject.formater;
+package m3.prettyobject.formatter;
 
-import m3.prettyobject.formater.wrappers.KeyValue;
-import m3.prettyobject.formater.wrappers.Symbol;
+import m3.prettyobject.formatter.wrappers.KeyValue;
+import m3.prettyobject.formatter.wrappers.Symbol;
 
 public class KeyValueFormatter implements Formatter {
 

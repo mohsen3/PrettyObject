@@ -1,4 +1,4 @@
-package m3.prettyobject.formater;
+package m3.prettyobject.formatter;
 
 public class EnumFormatter extends SimpleToStringFormatter {
     public EnumFormatter(Object obj) {

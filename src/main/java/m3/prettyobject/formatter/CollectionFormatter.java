@@ -1,6 +1,6 @@
-package m3.prettyobject.formater;
+package m3.prettyobject.formatter;
 
-import m3.prettyobject.formater.wrappers.Symbol;
+import m3.prettyobject.formatter.wrappers.Symbol;
 
 import java.util.Collection;
 
