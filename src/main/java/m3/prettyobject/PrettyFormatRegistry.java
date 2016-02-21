@@ -9,11 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PrettyFormatRegistry {
-    public static PrettyFormatRegistry defaultInstance = mkDefaultInstance();
-
     Map<Class<?>, PrettyFormatFactory> registry = new HashMap<Class<?>, PrettyFormatFactory>();
 
-    private static PrettyFormatRegistry mkDefaultInstance() {
+    public static PrettyFormatRegistry createDefaultInstance() {
         PrettyFormatRegistry def = new PrettyFormatRegistry();
 
         try {
