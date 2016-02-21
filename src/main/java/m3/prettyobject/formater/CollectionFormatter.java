@@ -1,12 +1,14 @@
-package prettyformater;
+package m3.prettyobject.formater;
+
+import m3.prettyobject.formater.wrappers.Symbol;
 
 import java.util.Collection;
 
-public class CollectionPrettyFormatter implements PrettyFormatter {
+public class CollectionFormatter implements Formatter {
 
     private final Collection obj;
 
-    public CollectionPrettyFormatter(Object collection) {
+    public CollectionFormatter(Object collection) {
         this.obj = (Collection) collection;
     }
 

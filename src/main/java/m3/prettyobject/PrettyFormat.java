@@ -1,4 +1,4 @@
-import prettyformater.PrettyFormatter;
+package m3.prettyobject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Formatter {
+public class PrettyFormat {
     private final PrettyFormatRegistry registry;
     private final int INDENT = 2;
     private final Set<Object> alreadyFormatted = new HashSet<Object>();
 
-    public Formatter(PrettyFormatRegistry registry) {
+    public PrettyFormat(PrettyFormatRegistry registry) {
         this.registry = registry;
     }
 
@@ -37,7 +37,7 @@ public class Formatter {
         }
 
         PrettyFormatFactory factory = registry.find(obj);
-        PrettyFormatter formatter = factory.mkPrettyFormatter(obj);
+        m3.prettyobject.formater.Formatter formatter = factory.mkPrettyFormatter(obj);
 
         objectPath.add(obj);
         Object preamble = formatter.getPreamble();

@@ -1,17 +1,19 @@
-import prettyformater.PrettyFormatter;
+package m3.prettyobject;
+
+import m3.prettyobject.formater.Formatter;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class ReflectionPrettyFormatFactory implements PrettyFormatFactory {
-    private final Constructor<? extends PrettyFormatter> constructor;
+    private final Constructor<? extends Formatter> constructor;
 
-    public ReflectionPrettyFormatFactory(Class<? extends PrettyFormatter> clazz) throws NoSuchMethodException {
+    public ReflectionPrettyFormatFactory(Class<? extends Formatter> clazz) throws NoSuchMethodException {
         constructor = clazz.getConstructor(Object.class);
     }
 
     @Override
-    public PrettyFormatter mkPrettyFormatter(Object obj) {
+    public Formatter mkPrettyFormatter(Object obj) {
         try {
             return constructor.newInstance(obj);
         } catch (InstantiationException e) {

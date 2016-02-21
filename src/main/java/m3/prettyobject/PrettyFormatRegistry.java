@@ -1,4 +1,8 @@
-import prettyformater.*;
+package m3.prettyobject;
+
+import m3.prettyobject.formater.*;
+import m3.prettyobject.formater.wrappers.KeyValue;
+import m3.prettyobject.formater.wrappers.Symbol;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,7 +17,7 @@ public class PrettyFormatRegistry {
         PrettyFormatRegistry def = new PrettyFormatRegistry();
 
         try {
-            def.register(Object.class, new ReflectionPrettyFormatFactory(GenericObjectPrettyFormatter.class));
+            def.register(Object.class, new ReflectionPrettyFormatFactory(GenericObjectFormatter.class));
 
             Class<?> primitiveClasses[] = {
                     Byte.TYPE,
@@ -35,15 +39,15 @@ public class PrettyFormatRegistry {
             };
 
             for (Class primitiveClass:primitiveClasses) {
-                def.register(primitiveClass, new ReflectionPrettyFormatFactory(PrimitiveTypePrettyFormatter.class));
+                def.register(primitiveClass, new ReflectionPrettyFormatFactory(PrimitiveTypeFormatter.class));
             }
 
-            def.register(Collection.class, new ReflectionPrettyFormatFactory(CollectionPrettyFormatter.class));
-            def.register(Map.class, new ReflectionPrettyFormatFactory(MapPrettyFormat.class));
-            def.register(KeyValue.class, new ReflectionPrettyFormatFactory(KeyValuePrettyFormatter.class));
-            def.register(Enum.class, new ReflectionPrettyFormatFactory(EnumPrettyformatter.class));
-            def.register(CharSequence.class, new ReflectionPrettyFormatFactory(CharSequencePrettyFormatter.class));
-            def.register(Symbol.class, new ReflectionPrettyFormatFactory(SymbolPrettyFormatter.class));
+            def.register(Collection.class, new ReflectionPrettyFormatFactory(CollectionFormatter.class));
+            def.register(Map.class, new ReflectionPrettyFormatFactory(MapFormat.class));
+            def.register(KeyValue.class, new ReflectionPrettyFormatFactory(KeyValueFormatter.class));
+            def.register(Enum.class, new ReflectionPrettyFormatFactory(EnumFormatter.class));
+            def.register(CharSequence.class, new ReflectionPrettyFormatFactory(CharSequenceFormatter.class));
+            def.register(Symbol.class, new ReflectionPrettyFormatFactory(SymbolFormatter.class));
         } catch (NoSuchMethodException e) {
             // This should never happen
             e.printStackTrace();
@@ -62,7 +66,7 @@ public class PrettyFormatRegistry {
 
         if (obj.getClass().isArray()) {
             try {
-                return new ReflectionPrettyFormatFactory(ArrayPrettyFormatter.class);
+                return new ReflectionPrettyFormatFactory(ArrayFormatter.class);
             } catch (NoSuchMethodException e) {
                 // This shouldn't happen
                 throw new RuntimeException(e);

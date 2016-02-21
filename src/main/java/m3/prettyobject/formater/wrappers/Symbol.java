@@ -1,4 +1,4 @@
-package prettyformater;
+package m3.prettyobject.formater.wrappers;
 
 
 /**

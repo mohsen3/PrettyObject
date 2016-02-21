@@ -1,15 +1,17 @@
-package prettyformater;
+package m3.prettyobject.formater;
+
+import m3.prettyobject.formater.wrappers.KeyValue;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
-public class MapPrettyFormat implements PrettyFormatter {
+public class MapFormat implements Formatter {
 
     private final Map<Object, Object> map;
 
-    public MapPrettyFormat(Object map) {
+    public MapFormat(Object map) {
         this.map = Collections.unmodifiableMap((Map<?, ?>) map);
     }
 

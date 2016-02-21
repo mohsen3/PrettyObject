@@ -1,6 +1,6 @@
-package prettyformater;
+package m3.prettyobject.formater;
 
-public interface PrettyFormatter {
+public interface Formatter {
     boolean isMultiline();
     boolean isIndexed();
     String format();

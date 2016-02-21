@@ -1,14 +1,17 @@
-package prettyformater;
+package m3.prettyobject.formater;
+
+import m3.prettyobject.formater.wrappers.KeyValue;
+import m3.prettyobject.formater.wrappers.Symbol;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-public class GenericObjectPrettyFormatter implements PrettyFormatter {
+public class GenericObjectFormatter implements Formatter {
     private final Object obj;
     private ArrayList<Object> fieldList;
 
-    public GenericObjectPrettyFormatter(Object obj) {
+    public GenericObjectFormatter(Object obj) {
         this.obj = obj;
     }
 

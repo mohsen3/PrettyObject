@@ -1,10 +1,13 @@
-package prettyformater;
+package m3.prettyobject.formater;
 
-public class KeyValuePrettyFormatter implements PrettyFormatter {
+import m3.prettyobject.formater.wrappers.KeyValue;
+import m3.prettyobject.formater.wrappers.Symbol;
+
+public class KeyValueFormatter implements Formatter {
 
     final private KeyValue keyValue;
 
-    public KeyValuePrettyFormatter(Object keyValue) {
+    public KeyValueFormatter(Object keyValue) {
         this.keyValue = (KeyValue) keyValue;
     }
 

@@ -1,10 +1,10 @@
-package prettyformater;
+package m3.prettyobject.formater;
 
-public class SimpleToStringPrettyFormatter implements PrettyFormatter {
+public class SimpleToStringFormatter implements Formatter {
 
     protected final Object obj;
 
-    public SimpleToStringPrettyFormatter(Object obj) {
+    public SimpleToStringFormatter(Object obj) {
         this.obj = obj;
     }
 

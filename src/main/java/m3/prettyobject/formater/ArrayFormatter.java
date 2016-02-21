@@ -1,13 +1,15 @@
-package prettyformater;
+package m3.prettyobject.formater;
+
+import m3.prettyobject.formater.wrappers.Symbol;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class ArrayPrettyFormatter implements PrettyFormatter {
+public class ArrayFormatter implements Formatter {
 
     private final Object arr;
 
-    public ArrayPrettyFormatter(Object arr) {
+    public ArrayFormatter(Object arr) {
         if (!arr.getClass().isArray())
             throw new RuntimeException("object not an array");
 

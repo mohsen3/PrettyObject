@@ -1,7 +1,7 @@
-package prettyformater;
+package m3.prettyobject.formater;
 
-public class CharSequencePrettyFormatter extends SimpleToStringPrettyFormatter {
-    public CharSequencePrettyFormatter(Object obj) {
+public class CharSequenceFormatter extends SimpleToStringFormatter {
+    public CharSequenceFormatter(Object obj) {
         super(obj);
     }
 
