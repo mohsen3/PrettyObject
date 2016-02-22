@@ -16,6 +16,7 @@ on Unix like machines or
 gradle.bat build
 ```
 on Windows.
+This will generate a jar file inside `build/libs` directory.
 You should have JDK (>=1.5) installed.
 The script downloads all the requirements, including `gradle`, and build the library.
 
@@ -69,6 +70,17 @@ m3.prettyobject.examples.Example {
   }
 }
 ```
+
+See `src/examples` directory for more examples.
+
+# Warning
+
+The generated output can be huge for some ordinary objects.
+For instance,
+pretty printing a `new java.swing.JButton()`
+results in about 173MB of output string!
+See the `CanBeHuge` example in the examples directory.
+
 
 
 
