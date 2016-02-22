@@ -71,7 +71,7 @@ public class GenericObjectFormatter implements Formatter {
         for (Field field:allFields) {
             try {
                 field.setAccessible(true);
-                fieldList.add(new KeyValue(field.getName(), maxKeyLength, field.get(obj)));
+                fieldList.add(new KeyValue(new Symbol(field.getName()), maxKeyLength, field.get(obj)));
             } catch (IllegalAccessException e) {
                 // this should never happen
                 e.printStackTrace();
