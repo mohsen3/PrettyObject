@@ -21,5 +21,55 @@ The script downloads all the requirements, including `gradle`, and build the lib
 
 # Example
 
+An instance of the following class:
+
+```java
+class Example {
+    private String str = "string-field";
+    Object nil = null;
+    int i = 10;
+    List<Object> list;
+    Map<Object, Object> map;
+
+    Example() {
+        ArrayList<Object> arrayList = new ArrayList<Object>();
+        arrayList.add("string-list-item");
+        arrayList.add(123);
+        arrayList.add(new int[]{10, 20, 30});
+        this.list = arrayList;
+
+        HashMap<Object, Object> map = new HashMap<Object, Object>();
+        map.put(new Point(3, 4), 5);
+        this.map = map;
+    }
+}
+```
+
+is printed as:
+
+```
+m3.prettyobject.examples.Example {
+  str => "string-field",
+  nil => null,
+  i => 10,
+  list => ArrayList {
+    "string-list-item",
+    123,
+    [
+      10,
+      20,
+      30
+    ]
+  },
+  map => class java.util.HashMap {
+    java.awt.Point {
+      x => 3,
+      y => 4
+    } => 5
+  }
+}
+```
+
+
 
 
