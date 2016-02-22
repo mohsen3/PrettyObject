@@ -3,7 +3,7 @@ package m3.prettyobject.examples;
 import m3.prettyobject.PrettyFormat;
 import m3.prettyobject.PrettyFormatRegistry;
 
-import java.awt.*;
+import java.awt.Point;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
