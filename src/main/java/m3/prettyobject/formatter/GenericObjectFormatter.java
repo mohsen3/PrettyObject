@@ -40,7 +40,7 @@ public class GenericObjectFormatter implements Formatter {
     }
 
     @Override
-    public Symbol getPostamble() {
+    public Object getPostamble() {
         return isNull() ? null : new Symbol("}");
     }
 

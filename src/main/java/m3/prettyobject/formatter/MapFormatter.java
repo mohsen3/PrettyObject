@@ -1,18 +1,18 @@
 package m3.prettyobject.formatter;
 
 import m3.prettyobject.formatter.wrappers.KeyValue;
+import m3.prettyobject.formatter.wrappers.Symbol;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
-public class MapFormat implements Formatter {
+public class MapFormatter implements Formatter {
 
     private final Map<Object, Object> map;
 
-    public MapFormat(Object map) {
-        this.map = Collections.unmodifiableMap((Map<?, ?>) map);
+    public MapFormatter(Object map) {
+        this.map = (Map<Object, Object>) map;
     }
 
     @Override
@@ -31,13 +31,13 @@ public class MapFormat implements Formatter {
     }
 
     @Override
-    public String getPreamble() {
-        return map.getClass() + " {";
+    public Symbol getPreamble() {
+        return new Symbol(map.getClass() + " {");
     }
 
     @Override
-    public String getPostamble() {
-        return "}";
+    public Object getPostamble() {
+        return new Symbol("}");
     }
 
     @Override

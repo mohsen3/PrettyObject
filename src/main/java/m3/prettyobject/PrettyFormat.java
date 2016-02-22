@@ -42,7 +42,7 @@ public class PrettyFormat {
         objectPath.add(obj);
         Object preamble = formatter.getPreamble();
         if (preamble != null) {
-            formatHelper(objectPath, 0, out, preamble, true);
+            formatHelper(objectPath, indents, out, preamble, false);
         }
 
         if (formatter.isMultiline()) {

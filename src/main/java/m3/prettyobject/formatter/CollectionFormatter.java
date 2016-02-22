@@ -33,7 +33,7 @@ public class CollectionFormatter implements Formatter {
     }
 
     @Override
-    public Symbol getPostamble() {
+    public Object getPostamble() {
         return new Symbol("}");
     }
 

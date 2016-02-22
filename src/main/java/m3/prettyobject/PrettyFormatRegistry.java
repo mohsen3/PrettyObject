@@ -41,7 +41,7 @@ public class PrettyFormatRegistry {
             }
 
             def.register(Collection.class, new ReflectionPrettyFormatFactory(CollectionFormatter.class));
-            def.register(Map.class, new ReflectionPrettyFormatFactory(MapFormat.class));
+            def.register(Map.class, new ReflectionPrettyFormatFactory(MapFormatter.class));
             def.register(KeyValue.class, new ReflectionPrettyFormatFactory(KeyValueFormatter.class));
             def.register(Enum.class, new ReflectionPrettyFormatFactory(EnumFormatter.class));
             def.register(CharSequence.class, new ReflectionPrettyFormatFactory(CharSequenceFormatter.class));

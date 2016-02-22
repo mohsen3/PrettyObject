@@ -1,5 +1,7 @@
 package m3.prettyobject.formatter;
 
+import m3.prettyobject.formatter.wrappers.Symbol;
+
 public class SimpleToStringFormatter implements Formatter {
 
     protected final Object obj;
@@ -24,12 +26,12 @@ public class SimpleToStringFormatter implements Formatter {
     }
 
     @Override
-    public String getPreamble() {
+    public Symbol getPreamble() {
         return null;
     }
 
     @Override
-    public String getPostamble() {
+    public Object getPostamble() {
         return null;
     }
 
