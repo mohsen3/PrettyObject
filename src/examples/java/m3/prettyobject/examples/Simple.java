@@ -30,7 +30,7 @@ class Example {
     }
 }
 
-public class Main {
+public class Simple {
     public static void main(String[] args) throws IOException {
         PrettyFormat formatter = new PrettyFormat(PrettyFormatRegistry.createDefaultInstance());
         formatter.format(new Example(), System.out);
