@@ -2,7 +2,7 @@ package m3.prettyobject.examples;
 
 import m3.prettyobject.PrettyFormat;
 import m3.prettyobject.PrettyFormatRegistry;
-import m3.prettyobject.ReflectionPrettyFormatFactory;
+import m3.prettyobject.ReflectionFormatFactory;
 import m3.prettyobject.formatter.PrimitiveTypeFormatter;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class IntHexFormatter extends PrimitiveTypeFormatter {
 
     public static void main(String[] args) throws IOException, NoSuchMethodException {
         PrettyFormatRegistry registry = PrettyFormatRegistry.createDefaultInstance();
-        registry.register(Integer.class, new ReflectionPrettyFormatFactory(IntHexFormatter.class));
+        registry.register(Integer.class, new ReflectionFormatFactory(IntHexFormatter.class));
         PrettyFormat formatter = new PrettyFormat(registry);
         formatter.format(new int[]{16, 32, 64}, System.out);
     }

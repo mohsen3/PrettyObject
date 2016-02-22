@@ -36,7 +36,7 @@ public class PrettyFormat {
             return;
         }
 
-        PrettyFormatFactory factory = registry.find(obj);
+        FormatterFactory factory = registry.find(obj);
         m3.prettyobject.formatter.Formatter formatter = factory.mkPrettyFormatter(obj);
 
         objectPath.add(obj);
