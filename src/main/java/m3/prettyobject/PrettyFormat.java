@@ -1,15 +1,13 @@
 package m3.prettyobject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class PrettyFormat {
     private final PrettyFormatRegistry registry;
     private final int INDENT = 2;
     private final Set<Object> alreadyFormatted = new HashSet<Object>();
+    private final Map<Integer, CharSequence> spaceCache = new HashMap<>();
 
     public PrettyFormat(PrettyFormatRegistry registry) {
         this.registry = registry;
@@ -69,12 +67,17 @@ public class PrettyFormat {
     }
 
     private CharSequence spaces(int n) {
+        // Reuse the CharSequence if one with the same size is already made.
+        if (spaceCache.containsKey(n))
+            return spaceCache.get(n);
+
         StringBuilder spaces = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
             spaces.append(' ');
         }
 
+        spaceCache.put(n, spaces);
         return spaces;
     }
 
